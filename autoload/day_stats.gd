@@ -31,4 +31,5 @@ func _change_day():
 	else:
 		night_passed += 1
 		current_time = DayType.DAY
+		GlobalSignals.day_changed.emit()
 	print(current_time)

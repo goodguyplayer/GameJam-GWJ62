@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwbvatskxii34"]
+[gd_scene load_steps=3 format=3 uid="uid://cwbvatskxii34"]
 
 [ext_resource type="Script" path="res://TestGrounds/TestSignals.gd" id="1_7mu3l"]
+[ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="2_iqqr8"]
 
 [node name="TestSignals" type="Node2D"]
 
@@ -11,5 +12,32 @@ offset_right = 280.0
 offset_bottom = 144.0
 text = "Change day"
 script = ExtResource("1_7mu3l")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+y_sort_enabled = true
+
+[node name="Floor" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(576, 280)
+scale = Vector2(0.315858, 0.282026)
+
+[node name="Floor2" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(520, 248)
+scale = Vector2(0.315858, 0.282026)
+
+[node name="Floor3" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(456, 280)
+scale = Vector2(0.315858, 0.282026)
+
+[node name="Floor4" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(640, 248)
+scale = Vector2(0.315858, 0.282026)
+
+[node name="Floor5" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(520, 312)
+scale = Vector2(0.315858, 0.282026)
+
+[node name="Floor6" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
+position = Vector2(576, 216)
+scale = Vector2(0.315858, 0.282026)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
