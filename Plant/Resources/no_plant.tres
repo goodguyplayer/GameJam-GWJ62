@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=2 format=3 uid="uid://ydwmsuaanpvq"]
+
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="1_ybqo2"]
+
+[resource]
+script = ExtResource("1_ybqo2")
+plant_name = "None"
+seed_used = "None"
+plant_type = "None"
+time_growth = -1
+humans_needed = -1
+blood_needed = -1
