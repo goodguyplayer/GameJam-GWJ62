@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnscgd07fvttk"]
+[gd_scene load_steps=3 format=3 uid="uid://cnscgd07fvttk"]
 
 [ext_resource type="Texture2D" uid="uid://c8xwl8ti5dkg0" path="res://Menus/Images/GWJ-Half-Logo-Orange.svg" id="1_7ro36"]
+[ext_resource type="FontFile" uid="uid://cvjxopj62tuoc" path="res://Menus/Fonts/WizardsManse.ttf" id="1_lvkp8"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -17,13 +18,45 @@ anchor_right = 1.0
 offset_bottom = 256.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Title"]
+[node name="MarginContainer" type="MarginContainer" parent="Title"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Title/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Title/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_lvkp8")
+theme_override_font_sizes/font_size = 68
+text = "HUMAN HARVEST"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_lvkp8")
+theme_override_font_sizes/font_size = 34
+text = "Title in works"
+horizontal_alignment = 1
+
+[node name="Subtitle2" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_lvkp8")
+theme_override_font_sizes/font_size = 16
+text = "V0.0"
+horizontal_alignment = 1
 
 [node name="Wildcards" type="Control" parent="."]
 layout_mode = 1
