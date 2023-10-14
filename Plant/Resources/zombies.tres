@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=2 format=3 uid="uid://bg8bs026vu47d"]
+
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="1_sgpuc"]
+
+[resource]
+script = ExtResource("1_sgpuc")
+plant_name = "Zombie"
+seed_used = "Bones"
+plant_type = "Undead"
+plant_max_age = 5
+plant_current_age = 0
+time_growth = -1
+humans_needed = 3
+blood_needed = 2

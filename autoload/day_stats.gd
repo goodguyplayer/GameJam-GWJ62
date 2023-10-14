@@ -7,10 +7,10 @@ enum DayType {DAY, NIGHT}
 	set(value): 
 		current_time = value
 	
-@export var days_passed : int = 0 : 
+@export var days_passed : int = 1 : 
 	set(value): days_passed = value
 	get: return days_passed 
-@export var night_passed : int = 0 :
+@export var night_passed : int = 1 :
 	set(value): night_passed = value
 	get: return night_passed 
 
@@ -28,8 +28,9 @@ func _change_day():
 	if current_time == DayType.DAY:
 		days_passed += 1
 		current_time = DayType.NIGHT
+		print("Night time! Night {night}".format({"night":night_passed}))
 	else:
 		night_passed += 1
 		current_time = DayType.DAY
+		print("Day time! Day {day}".format({"day":days_passed}))
 		GlobalSignals.day_changed.emit()
-	print(current_time)

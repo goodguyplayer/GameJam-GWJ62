@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwbvatskxii34"]
+[gd_scene load_steps=4 format=3 uid="uid://cwbvatskxii34"]
 
 [ext_resource type="Script" path="res://TestGrounds/TestSignals.gd" id="1_7mu3l"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="2_iqqr8"]
+[ext_resource type="Resource" uid="uid://bg8bs026vu47d" path="res://Plant/Resources/zombies.tres" id="3_hp27h"]
 
 [node name="TestSignals" type="Node2D"]
 
@@ -17,27 +18,30 @@ script = ExtResource("1_7mu3l")
 y_sort_enabled = true
 
 [node name="Floor" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(576, 280)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(512, 256)
+scale = Vector2(0.318172, 0.284398)
 
 [node name="Floor2" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(520, 248)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(640, 192)
+scale = Vector2(0.318172, 0.284398)
+plant_used = ExtResource("3_hp27h")
 
 [node name="Floor3" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(456, 280)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(680, 216)
+scale = Vector2(0.318172, 0.284398)
 
 [node name="Floor4" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(640, 248)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(576, 224)
+scale = Vector2(0.318172, 0.284398)
+plant_used = ExtResource("3_hp27h")
 
 [node name="Floor5" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(520, 312)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(624, 248)
+scale = Vector2(0.318172, 0.284398)
 
 [node name="Floor6" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(576, 216)
-scale = Vector2(0.315858, 0.282026)
+position = Vector2(568, 280)
+scale = Vector2(0.318172, 0.284398)
+plant_used = ExtResource("3_hp27h")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

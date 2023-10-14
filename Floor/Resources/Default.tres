@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="FloorProperty" load_steps=3 format=3 uid="uid://tfnrsago7rlp"]
 
-[ext_resource type="Resource" uid="uid://ydwmsuaanpvq" path="res://Plant/Resources/no_plant.tres" id="1_0v6xk"]
+[ext_resource type="Resource" uid="uid://bg8bs026vu47d" path="res://Plant/Resources/zombies.tres" id="1_ss1hm"]
 [ext_resource type="Script" path="res://Floor/floor_properties.gd" id="2_0ynr7"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_0ynr7")
-plant_used = ExtResource("1_0v6xk")
+plant_used = ExtResource("1_ss1hm")
 number = 1
 price = -1
