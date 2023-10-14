@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://i12brybgasnq"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Header"]
+layout_mode = 2
+alignment = 1
+
+[node name="Money" type="MarginContainer" parent="MarginContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Header/HBoxContainer/Money"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Header/HBoxContainer/Money/VBoxContainer"]
+layout_mode = 2
+text = "Money"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyNumber" type="Label" parent="MarginContainer/Header/HBoxContainer/Money/VBoxContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Days" type="MarginContainer" parent="MarginContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/Header/HBoxContainer/Days"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Header/HBoxContainer/Days/VBoxContainer"]
+layout_mode = 2
+text = "DAY"
+horizontal_alignment = 1
+
+[node name="DaysNumber" type="Label" parent="MarginContainer/Header/HBoxContainer/Days/VBoxContainer"]
+layout_mode = 2
+text = "01"
+
+[node name="Score" type="MarginContainer" parent="MarginContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Header/HBoxContainer/Score"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Header/HBoxContainer/Score/VBoxContainer"]
+layout_mode = 2
+text = "Score"
+horizontal_alignment = 1
+
+[node name="ScoreNumber" type="Label" parent="MarginContainer/Header/HBoxContainer/Score/VBoxContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="LogButton" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "See Log"
+
+[node name="LogButton2" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "End day
+"
