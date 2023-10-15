@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://i12brybgasnq"]
+[gd_scene load_steps=2 format=3 uid="uid://i12brybgasnq"]
+
+[ext_resource type="Script" path="res://UI/Day/ui.gd" id="1_13wfc"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
+script = ExtResource("1_13wfc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -89,7 +92,10 @@ alignment = 2
 layout_mode = 2
 text = "See Log"
 
-[node name="LogButton2" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="EndDay" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "End day
 "
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/LogButton" to="." method="_on_log_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/EndDay" to="." method="_on_end_day_pressed"]
