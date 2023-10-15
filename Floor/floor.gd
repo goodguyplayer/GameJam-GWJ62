@@ -4,6 +4,8 @@ extends Node2D
 @export var plant_used : PlantProperties
 @export var internal_timer : int = 0
 @onready var plant_seed = $PlantSeed
+@onready var plant_status = $PlantStatus
+
 
 const DEFAULT_PLANT :String = "res://Plant/Resources/no_plant.tres"
 
@@ -31,7 +33,10 @@ func _update_seeds_new_day():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if plant_used.plant_name == "None":
-			if event.is_action_pressed("mouse_click"):
+		if event.is_action_pressed("mouse_click"):
+			if plant_used.plant_name == "None":
 				plant_seed.visible = true
+			else:
+				plant_status.update_status(plant_used, internal_timer)
+				plant_status.visible = true
 
