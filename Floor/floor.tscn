@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqy1wshi5ueic"]
+[gd_scene load_steps=5 format=3 uid="uid://bqy1wshi5ueic"]
 
 [ext_resource type="Script" path="res://Floor/floor.gd" id="1_71mhv"]
 [ext_resource type="Resource" uid="uid://ydwmsuaanpvq" path="res://Plant/Resources/no_plant.tres" id="2_jg3hg"]
 [ext_resource type="Texture2D" uid="uid://ciuvr63nv16fw" path="res://Floor/floor_sprite_2.png" id="3_1hb0l"]
+[ext_resource type="Script" path="res://Floor/PlantSeed.gd" id="4_jnsu8"]
 
 [node name="Floor" type="Node2D"]
 script = ExtResource("1_71mhv")
@@ -10,3 +11,56 @@ plant_used = ExtResource("2_jg3hg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_1hb0l")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-192, -112, 0, 0, 192, -112, 0, -224)
+
+[node name="PlantSeed" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_jnsu8")
+
+[node name="ColorRect" type="ColorRect" parent="PlantSeed"]
+layout_mode = 0
+offset_left = -192.0
+offset_top = -704.0
+offset_right = 192.0
+offset_bottom = -256.0
+color = Color(0.584314, 0.247059, 0, 1)
+
+[node name="Name" type="Label" parent="PlantSeed"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -688.0
+offset_right = 128.0
+offset_bottom = -656.0
+text = "Land"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="PlantSeed"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -640.0
+offset_right = 128.0
+offset_bottom = -320.0
+item_count = 4
+item_0/text = "Heart"
+item_1/text = "Brain"
+item_2/text = "Kidney"
+item_3/text = "Eye"
+
+[node name="Close" type="Button" parent="PlantSeed"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -304.0
+offset_right = 64.0
+offset_bottom = -272.0
+text = "Close"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="PlantSeed/Close" to="PlantSeed" method="_on_close_pressed"]
