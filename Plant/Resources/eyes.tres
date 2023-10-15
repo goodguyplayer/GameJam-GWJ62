@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=2 format=3 uid="uid://cjip41nugfu4k"]
+
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="1_0jp4j"]
+
+[resource]
+script = ExtResource("1_0jp4j")
+plant_name = "Eyes"
+seed_used = "Organ"
+plant_type = "Organ"
+plant_max_age = 3
+plant_current_age = 0
+time_growth = -1
+humans_needed = -1
+blood_needed = -1

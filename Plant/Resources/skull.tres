@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=2 format=3 uid="uid://blglshuufnxi0"]
+
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="1_doita"]
+
+[resource]
+script = ExtResource("1_doita")
+plant_name = "Heart"
+seed_used = "Organ"
+plant_type = "Organ"
+plant_max_age = 7
+plant_current_age = 0
+time_growth = -1
+humans_needed = -1
+blood_needed = -1
