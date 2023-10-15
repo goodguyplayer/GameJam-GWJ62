@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnscgd07fvttk"]
+[gd_scene load_steps=7 format=3 uid="uid://cnscgd07fvttk"]
 
 [ext_resource type="Texture2D" uid="uid://c8xwl8ti5dkg0" path="res://Menus/Images/GWJ-Half-Logo-Orange.svg" id="1_7ro36"]
 [ext_resource type="FontFile" uid="uid://cvjxopj62tuoc" path="res://Menus/Fonts/WizardsManse.ttf" id="1_lvkp8"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="1_pp5jj"]
+[ext_resource type="Texture2D" uid="uid://bpuxheiumqfjl" path="res://Menus/Images/night-time.png" id="3_u87da"]
+[ext_resource type="Texture2D" uid="uid://bsxf5muggouk4" path="res://Menus/Images/fall.png" id="4_k46mv"]
+[ext_resource type="Texture2D" uid="uid://b6b7vtnrxepif" path="res://Menus/Images/one-or-two.png" id="5_xxyvo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,8 +81,24 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Wildcards/MarginContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Wildcards/MarginContainer/HBoxContainer"]
+[node name="Card1" type="TextureRect" parent="Wildcards/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_u87da")
+expand_mode = 2
+
+[node name="Card2" type="TextureRect" parent="Wildcards/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_k46mv")
+expand_mode = 2
+
+[node name="Card3" type="TextureRect" parent="Wildcards/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_xxyvo")
+expand_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Wildcards/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_7ro36")
 expand_mode = 2
