@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgp3t0qmpw5i"]
+[gd_scene load_steps=5 format=3 uid="uid://bgp3t0qmpw5i"]
 
+[ext_resource type="Script" path="res://FarmLands/farm_lands.gd" id="1_3orom"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
 [ext_resource type="PackedScene" uid="uid://i12brybgasnq" path="res://UI/Day/ui.tscn" id="2_wajme"]
 [ext_resource type="PackedScene" uid="uid://bfxfddhjdjac2" path="res://Menus/Pause/pause.tscn" id="3_evsle"]
 
 [node name="FarmLands" type="Node2D"]
+script = ExtResource("1_3orom")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 y_sort_enabled = true
