@@ -20,7 +20,7 @@ script = ExtResource("1_pp5jj")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 256.0
+offset_bottom = 192.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Title"]
@@ -67,7 +67,7 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 256.0
+offset_top = 192.0
 offset_bottom = 448.0
 grow_horizontal = 2
 
@@ -130,14 +130,22 @@ alignment = 1
 layout_mode = 2
 focus_neighbor_left = NodePath("../Exit")
 focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_right = NodePath("../Options")
-focus_neighbor_bottom = NodePath("../Options")
+focus_neighbor_right = NodePath("../Endless")
+focus_neighbor_bottom = NodePath("../Endless")
 text = "Start"
 
-[node name="Options" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+[node name="Endless" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../Start")
 focus_neighbor_top = NodePath("../Start")
+focus_neighbor_right = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Options")
+text = "Endless Mode"
+
+[node name="Options" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Endless")
+focus_neighbor_top = NodePath("../Endless")
 focus_neighbor_right = NodePath("../Credits")
 focus_neighbor_bottom = NodePath("../Credits")
 text = "Options"
@@ -161,6 +169,7 @@ text = "Exit
 "
 
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Endless" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

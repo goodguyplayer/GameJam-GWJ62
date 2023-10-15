@@ -16,3 +16,7 @@ func _on_credits_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_endless_pressed():
+	pass # Replace with function body.
