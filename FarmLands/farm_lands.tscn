@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgp3t0qmpw5i"]
+
+[ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
+[ext_resource type="PackedScene" uid="uid://i12brybgasnq" path="res://UI/Day/ui.tscn" id="2_wajme"]
+
+[node name="FarmLands" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+y_sort_enabled = true
+
+[node name="Floor" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(512, 320)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Floor2" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(640, 320)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Floor3" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(576, 288)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Floor4" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(448, 288)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Floor5" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(576, 352)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Floor6" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
+position = Vector2(448, 352)
+scale = Vector2(0.323406, 0.286833)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="UI" parent="Camera2D" instance=ExtResource("2_wajme")]
