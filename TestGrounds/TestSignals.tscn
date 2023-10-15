@@ -40,8 +40,8 @@ position = Vector2(624, 248)
 scale = Vector2(0.318172, 0.284398)
 
 [node name="Floor6" parent="CanvasGroup" instance=ExtResource("2_iqqr8")]
-position = Vector2(568, 280)
-scale = Vector2(0.318172, 0.284398)
+position = Vector2(848, 400)
+scale = Vector2(0.729166, 0.587248)
 plant_used = ExtResource("3_hp27h")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
