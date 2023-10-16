@@ -9,11 +9,6 @@ func _ready():
 	GlobalSignals.day_changed.connect(_on_new_day)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_new_day():
 	days_number.text = str(DayStats.days_passed)
 

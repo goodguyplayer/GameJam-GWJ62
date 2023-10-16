@@ -11,9 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func update_status(plant :PlantProperties, age :int):
 	name_seed.text = plant.plant_name

@@ -20,10 +20,6 @@ func _ready():
 	GlobalSignals.change_day.connect(_change_day)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _change_day():
 	if current_time == DayType.DAY:
 		days_passed += 1

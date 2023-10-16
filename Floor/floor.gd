@@ -14,11 +14,6 @@ func _ready():
 	GlobalSignals.day_changed.connect(_update_seeds_new_day)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _update_seeds_new_day():
 	if plant_used.plant_max_age != -1:
 		if internal_timer == plant_used.plant_max_age:
@@ -31,7 +26,7 @@ func _update_seeds_new_day():
 			print("{name}:{days} days have passed for this plant!".format({"days": internal_timer, "name": name})) 
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("mouse_click"):
 			if plant_used.plant_name == "None":
