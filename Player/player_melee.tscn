@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://chhckptp4bd1i"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfh3i"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mcmj6"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4b1ew"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gq0oa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjq5u"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_klqjj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rog8k"]
+states/attack/node = SubResource("AnimationNodeAnimation_dfh3i")
+states/attack/position = Vector2(560, 70)
+states/idle/node = SubResource("AnimationNodeAnimation_mcmj6")
+states/idle/position = Vector2(560, 151)
+transitions = ["attack", "idle", SubResource("AnimationNodeStateMachineTransition_4b1ew"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_gq0oa"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_yjq5u"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_klqjj")]
+graph_offset = Vector2(-40, 33)
+
+[sub_resource type="Animation" id="Animation_0a8v8"]
+resource_name = "idle"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_ule42"]
+resource_name = "attack"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_id8gq"]
+_data = {
+"attack": SubResource("Animation_ule42"),
+"idle": SubResource("Animation_0a8v8")
+}
+
+[node name="PlayerMelee" type="Node2D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_rog8k")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_id8gq")
+}
