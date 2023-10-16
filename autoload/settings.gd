@@ -1,11 +1,14 @@
 extends Node
 
+var theme = preload("res://Menus/Fonts/font_theme.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	GlobalSignals.change_theme_font.connect(_theme_font_change)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+
+func _theme_font_change(theme_font):
+	print(theme_font)
+	theme.set_font("", "", theme_font)

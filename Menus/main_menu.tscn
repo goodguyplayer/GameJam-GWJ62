@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnscgd07fvttk"]
+[gd_scene load_steps=8 format=3 uid="uid://cnscgd07fvttk"]
 
 [ext_resource type="Texture2D" uid="uid://c8xwl8ti5dkg0" path="res://Menus/Images/GWJ-Half-Logo-Orange.svg" id="1_7ro36"]
-[ext_resource type="FontFile" uid="uid://cvjxopj62tuoc" path="res://Menus/Fonts/WizardsManse.ttf" id="1_lvkp8"]
 [ext_resource type="Script" path="res://Menus/Scripts/main_menu.gd" id="1_pp5jj"]
+[ext_resource type="Theme" uid="uid://bbugk5d1a5grd" path="res://Menus/Fonts/font_theme.tres" id="2_0vxi4"]
 [ext_resource type="Texture2D" uid="uid://bpuxheiumqfjl" path="res://Menus/Images/night-time.png" id="3_u87da"]
 [ext_resource type="Texture2D" uid="uid://bsxf5muggouk4" path="res://Menus/Images/fall.png" id="4_k46mv"]
 [ext_resource type="Texture2D" uid="uid://b6b7vtnrxepif" path="res://Menus/Images/one-or-two.png" id="5_xxyvo"]
+[ext_resource type="Script" path="res://Menus/theme_button.gd" id="7_q28p0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,24 +42,24 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_0vxi4")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_lvkp8")
 theme_override_font_sizes/font_size = 68
 text = "HUMAN HARVEST"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_0vxi4")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_lvkp8")
 theme_override_font_sizes/font_size = 34
 text = "Title in works"
 horizontal_alignment = 1
 
 [node name="Subtitle2" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_0vxi4")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_lvkp8")
 theme_override_font_sizes/font_size = 16
 text = "V0.0"
 horizontal_alignment = 1
@@ -132,6 +133,7 @@ focus_neighbor_left = NodePath("../Exit")
 focus_neighbor_top = NodePath("../Exit")
 focus_neighbor_right = NodePath("../Endless")
 focus_neighbor_bottom = NodePath("../Endless")
+theme = ExtResource("2_0vxi4")
 text = "Start"
 
 [node name="Endless" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
@@ -140,6 +142,7 @@ focus_neighbor_left = NodePath("../Start")
 focus_neighbor_top = NodePath("../Start")
 focus_neighbor_right = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Options")
+theme = ExtResource("2_0vxi4")
 text = "Endless Mode"
 
 [node name="Options" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
@@ -148,6 +151,7 @@ focus_neighbor_left = NodePath("../Endless")
 focus_neighbor_top = NodePath("../Endless")
 focus_neighbor_right = NodePath("../Credits")
 focus_neighbor_bottom = NodePath("../Credits")
+theme = ExtResource("2_0vxi4")
 text = "Options"
 
 [node name="Credits" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
@@ -156,6 +160,7 @@ focus_neighbor_left = NodePath("../Options")
 focus_neighbor_top = NodePath("../Options")
 focus_neighbor_right = NodePath("../Exit")
 focus_neighbor_bottom = NodePath("../Exit")
+theme = ExtResource("2_0vxi4")
 text = "Credits
 "
 
@@ -165,11 +170,23 @@ focus_neighbor_left = NodePath("../Credits")
 focus_neighbor_top = NodePath("../Credits")
 focus_neighbor_right = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../Start")
+theme = ExtResource("2_0vxi4")
 text = "Exit
 "
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 29.0
+offset_right = 144.0
+offset_bottom = 71.0
+theme = ExtResource("2_0vxi4")
+text = "Change font theme"
+script = ExtResource("7_q28p0")
 
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Endless" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]
