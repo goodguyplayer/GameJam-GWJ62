@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://chhckptp4bd1i"]
+[gd_scene load_steps=14 format=3 uid="uid://chhckptp4bd1i"]
+
+[ext_resource type="PackedScene" uid="uid://wklk1b6afk2e" path="res://HitboxHurtbox/hitbox.tscn" id="1_f1uky"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfh3i"]
 animation = &"attack"
@@ -33,12 +35,67 @@ length = 0.2
 [sub_resource type="Animation" id="Animation_ule42"]
 resource_name = "attack"
 length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.785398, 0.0, 0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r02bl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_id8gq"]
 _data = {
+"RESET": SubResource("Animation_r02bl"),
 "attack": SubResource("Animation_ule42"),
 "idle": SubResource("Animation_0a8v8")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7x4h"]
+size = Vector2(112, 48)
 
 [node name="PlayerMelee" type="Node2D"]
 
@@ -51,3 +108,14 @@ active = true
 libraries = {
 "": SubResource("AnimationLibrary_id8gq")
 }
+
+[node name="Hitbox" parent="." instance=ExtResource("1_f1uky")]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_v7x4h")
+disabled = true
+
+[editable path="Hitbox"]
