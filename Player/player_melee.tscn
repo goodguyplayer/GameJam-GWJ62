@@ -118,4 +118,6 @@ position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_v7x4h")
 disabled = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [editable path="Hitbox"]
