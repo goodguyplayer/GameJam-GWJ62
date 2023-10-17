@@ -12,10 +12,10 @@ func _ready():
 
 
 
-func update_status(plant :PlantProperties, age :int):
-	name_seed.text = plant.plant_name
-	age_plant.text = "Age.: {age}".format({"age": str(age)})
-	seed_type.text = "Seed.: {seed}".format({"seed":plant.plant_type})
+func update_status(plant, age :int):
+	name_seed.text = plant.current_type.plant_name
+	age_plant.text = "Age.: {age}".format({"age": str(plant.age)})
+	seed_type.text = "Seed.: {seed}".format({"seed":plant.current_type.plant_type})
 	health.text = "Health.: {internal_health}".format({"internal_health":internal_health})
 
 

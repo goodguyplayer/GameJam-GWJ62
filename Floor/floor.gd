@@ -5,6 +5,7 @@ extends Node2D
 @export var internal_timer : int = 0
 @onready var plant_seed = $PlantSeed
 @onready var plant_status = $PlantStatus
+@onready var plant = $Plant
 
 
 const DEFAULT_PLANT :String = "res://Plant/Resources/no_plant.tres"
@@ -32,6 +33,11 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			if plant_used.plant_name == "None":
 				plant_seed.visible = true
 			else:
-				plant_status.update_status(plant_used, internal_timer)
+				plant_status.update_status(plant, internal_timer)
 				plant_status.visible = true
 
+
+
+func _on_plant_seed_item_selected(plant_type):
+	plant_used = plant_type
+	plant.change_type(plant_type)
