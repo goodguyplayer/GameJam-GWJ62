@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://Player/player_ranged.gd" id="1_absld"]
 [ext_resource type="PackedScene" uid="uid://wklk1b6afk2e" path="res://HitboxHurtbox/hitbox.tscn" id="1_jsq7e"]
 
+[sub_resource type="Animation" id="Animation_klbp2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_3qqwx"]
 resource_name = "attack"
 length = 0.3
@@ -22,21 +37,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_3ei0d"]
 resource_name = "idle"
 length = 0.1
-
-[sub_resource type="Animation" id="Animation_klbp2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kxrto"]
 _data = {

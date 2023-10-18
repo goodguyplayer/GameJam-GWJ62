@@ -8,7 +8,7 @@ var day_time_flag = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalSignals.day_time.connect(day_time)
-	GlobalSignals.night_time.connect(night_time)
+	GlobalSignals.weapon_choice.connect(night_time)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +20,7 @@ func _process(delta):
 
 
 func night_time(melee_ranged):
-	if melee_ranged == 0: # Melee
+	if melee_ranged == 0: # 0 - Melee, 1 - ranged
 		current = melee_ranged
 		player_melee.visible = (true)
 	else:

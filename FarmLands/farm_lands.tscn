@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgp3t0qmpw5i"]
+[gd_scene load_steps=8 format=3 uid="uid://bgp3t0qmpw5i"]
 
 [ext_resource type="Script" path="res://FarmLands/farm_lands.gd" id="1_3orom"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
 [ext_resource type="PackedScene" uid="uid://bfxfddhjdjac2" path="res://Menus/Pause/pause.tscn" id="3_evsle"]
 [ext_resource type="Script" path="res://FarmLands/Camera2D.gd" id="3_ha8fk"]
 [ext_resource type="PackedScene" uid="uid://dug3q248gh305" path="res://UI/Day/header.tscn" id="3_okmyn"]
+[ext_resource type="PackedScene" uid="uid://ced0xog2y580v" path="res://UI/WeaponChoice/weapon_choice.tscn" id="4_t0e6c"]
 [ext_resource type="PackedScene" uid="uid://nbh3jt1glm68" path="res://Player/player.tscn" id="6_4qqqm"]
 
 [node name="FarmLands" type="Node2D"]
@@ -15,6 +16,15 @@ position = Vector2(576, 328)
 script = ExtResource("3_ha8fk")
 
 [node name="UI" parent="." instance=ExtResource("3_okmyn")]
+
+[node name="WeaponChoice" parent="UI" instance=ExtResource("4_t0e6c")]
+visible = false
+offset_left = 403.0
+offset_top = 133.0
+offset_right = 403.0
+offset_bottom = 133.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Pause" parent="." instance=ExtResource("3_evsle")]
 

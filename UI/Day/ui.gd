@@ -19,4 +19,4 @@ func _on_log_button_pressed():
 
 func _on_end_day_pressed():
 	GlobalSignals.change_day.emit()
-	GlobalSignals.night_time.emit(0)
+	GlobalSignals.night_time.emit()
