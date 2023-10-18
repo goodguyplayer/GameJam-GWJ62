@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://nbh3jt1glm68"]
+[gd_scene load_steps=4 format=3 uid="uid://nbh3jt1glm68"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_cywds"]
+[ext_resource type="PackedScene" uid="uid://chhckptp4bd1i" path="res://Player/player_melee.tscn" id="2_ohxqx"]
+[ext_resource type="PackedScene" uid="uid://bkujqc765dwo5" path="res://Player/player_ranged.tscn" id="3_n3fpd"]
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_cywds")
+
+[node name="PlayerMelee" parent="." instance=ExtResource("2_ohxqx")]
+visible = false
+
+[node name="PlayerRanged" parent="." instance=ExtResource("3_n3fpd")]
+visible = false

@@ -2,9 +2,7 @@ extends Node2D
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_player = $AnimationPlayer
-@export var ammo : int = 0
-@export var max_ammo : int = 10
-@export var damage : int = 7
+@export var damage : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,5 +15,4 @@ func _process(_delta):
 
 
 func attack():
-	if ammo != 0:	
-		animation_player.play("attack")
+	animation_player.play("attack")

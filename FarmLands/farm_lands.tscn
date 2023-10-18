@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgp3t0qmpw5i"]
+[gd_scene load_steps=7 format=3 uid="uid://bgp3t0qmpw5i"]
 
 [ext_resource type="Script" path="res://FarmLands/farm_lands.gd" id="1_3orom"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
 [ext_resource type="PackedScene" uid="uid://bfxfddhjdjac2" path="res://Menus/Pause/pause.tscn" id="3_evsle"]
 [ext_resource type="Script" path="res://FarmLands/Camera2D.gd" id="3_ha8fk"]
 [ext_resource type="PackedScene" uid="uid://dug3q248gh305" path="res://UI/Day/header.tscn" id="3_okmyn"]
+[ext_resource type="PackedScene" uid="uid://nbh3jt1glm68" path="res://Player/player.tscn" id="6_4qqqm"]
 
 [node name="FarmLands" type="Node2D"]
 script = ExtResource("1_3orom")
@@ -83,3 +84,5 @@ scale = Vector2(0.652158, 0.593549)
 [node name="Floor16" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
 position = Vector2(576, 184)
 scale = Vector2(0.652158, 0.593549)
+
+[node name="Player" parent="." instance=ExtResource("6_4qqqm")]
