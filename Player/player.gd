@@ -15,11 +15,12 @@ func _ready():
 func _process(delta):
 	position = get_global_mouse_position()
 	if not day_time_flag:
-		if Input.is_action_pressed("mouse_click"):
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			current.attack()
 
 
 func night_time(melee_ranged):
+	day_time_flag = false
 	if melee_ranged == 0: # 0 - Melee, 1 - ranged
 		current = melee_ranged
 		player_melee.visible = (true)

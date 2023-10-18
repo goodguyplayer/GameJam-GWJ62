@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var animation_tree = $AnimationTree
 @onready var animation_player = $AnimationPlayer
-@export var ammo : int = 0
+@export var ammo : int = 10
 @export var max_ammo : int = 10
 @export var damage : int = 7
 
@@ -16,6 +16,17 @@ func _process(_delta):
 	attack()
 
 
+func reload():
+	#animation_player.play("reload")
+	ammo = max_ammo
+
+
 func attack():
+	print(ammo)
 	if ammo != 0:	
 		animation_player.play("attack")
+		ammo = ammo - 1
+		
+		
+func attack_stop():
+	animation_player.play("idle")

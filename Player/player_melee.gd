@@ -16,3 +16,7 @@ func _process(_delta):
 
 func attack():
 	animation_player.play("attack")
+
+
+func attack_stop():
+	animation_player.play("idle")
