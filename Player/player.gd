@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var player_melee = $PlayerMelee
 @onready var player_ranged = $PlayerRanged
-var current
-var day_time_flag = true
+@onready var current = $PlayerMelee
+@export var day_time_flag = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +22,7 @@ func _process(delta):
 func night_time(melee_ranged):
 	day_time_flag = false
 	if melee_ranged == 0: # 0 - Melee, 1 - ranged
-		current = melee_ranged
+		current = player_melee
 		player_melee.visible = (true)
 	else:
 		current = player_ranged

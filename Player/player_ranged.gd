@@ -11,18 +11,12 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	attack()
-
-
 func reload():
 	#animation_player.play("reload")
 	ammo = max_ammo
 
 
 func attack():
-	print(ammo)
 	if ammo != 0:	
 		animation_player.play("attack")
 		ammo = ammo - 1
