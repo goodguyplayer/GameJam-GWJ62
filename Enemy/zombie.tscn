@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://brqc2sau2ydpp"]
+
+[ext_resource type="Script" path="res://Enemy/zombie.gd" id="1_wjffg"]
+[ext_resource type="Texture2D" uid="uid://cddr4msoaopwb" path="res://icon.svg" id="2_f5qj8"]
+[ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="3_g5x5g"]
+[ext_resource type="Script" path="res://HitboxHurtbox/zombieCode.gd" id="4_xuo3q"]
+
+[sub_resource type="Animation" id="Animation_wvfst"]
+resource_name = "walking"
+
+[sub_resource type="Animation" id="Animation_khcmp"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_0pbaa"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_die_animation_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qu2yj"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8xfg"]
+_data = {
+"attack": SubResource("Animation_khcmp"),
+"die": SubResource("Animation_0pbaa"),
+"idle": SubResource("Animation_qu2yj"),
+"walking": SubResource("Animation_wvfst")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tgxnm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fcxh"]
+radius = 64.4981
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugsd8"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_wjffg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f5qj8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o8xfg")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_tgxnm")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_g5x5g")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_xuo3q")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_5fcxh")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -77.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_ugsd8")
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Hurtbox"]
