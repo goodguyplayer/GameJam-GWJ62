@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgp3t0qmpw5i"]
+[gd_scene load_steps=9 format=3 uid="uid://bgp3t0qmpw5i"]
 
 [ext_resource type="Script" path="res://FarmLands/farm_lands.gd" id="1_3orom"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dug3q248gh305" path="res://UI/Day/header.tscn" id="3_okmyn"]
 [ext_resource type="PackedScene" uid="uid://ced0xog2y580v" path="res://UI/WeaponChoice/weapon_choice.tscn" id="4_t0e6c"]
 [ext_resource type="PackedScene" uid="uid://nbh3jt1glm68" path="res://Player/player.tscn" id="6_4qqqm"]
+[ext_resource type="PackedScene" uid="uid://cko4ox3ag5fku" path="res://Enemy/spawner.tscn" id="8_0gicr"]
 
 [node name="FarmLands" type="Node2D"]
 script = ExtResource("1_3orom")
@@ -96,3 +97,25 @@ position = Vector2(576, 184)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Player" parent="." instance=ExtResource("6_4qqqm")]
+
+[node name="Spawner" parent="." instance=ExtResource("8_0gicr")]
+
+[node name="Marker2D" parent="Spawner" index="0"]
+position = Vector2(371, -116)
+
+[node name="Marker2D2" parent="Spawner" index="1"]
+position = Vector2(789, -107)
+
+[node name="Marker2D3" parent="Spawner" index="2"]
+position = Vector2(1040, -76)
+
+[node name="Marker2D4" parent="Spawner" index="3"]
+position = Vector2(120, -56)
+
+[node name="Marker2D5" parent="Spawner" index="4"]
+position = Vector2(1195, 194)
+
+[node name="Marker2D6" parent="Spawner" index="5"]
+position = Vector2(-80, 200)
+
+[editable path="Spawner"]

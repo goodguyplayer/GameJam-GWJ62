@@ -18,7 +18,7 @@ const TIMER_FLICKER : float = 1.2
 
 
 func _physics_process(delta):
-	pass
+	move_and_slide()
 
 
 func _on_timer_timeout():
