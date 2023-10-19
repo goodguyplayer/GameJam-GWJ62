@@ -3,10 +3,7 @@
 [ext_resource type="Script" path="res://Enemy/zombie.gd" id="1_wjffg"]
 [ext_resource type="Texture2D" uid="uid://cddr4msoaopwb" path="res://icon.svg" id="2_f5qj8"]
 [ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="3_g5x5g"]
-[ext_resource type="Script" path="res://HitboxHurtbox/zombieCode.gd" id="4_xuo3q"]
-
-[sub_resource type="Animation" id="Animation_wvfst"]
-resource_name = "walking"
+[ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="4_3gey4"]
 
 [sub_resource type="Animation" id="Animation_khcmp"]
 resource_name = "attack"
@@ -31,6 +28,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qu2yj"]
 resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_wvfst"]
+resource_name = "walking"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o8xfg"]
 _data = {
@@ -63,10 +63,10 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_tgxnm")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Hurtbox" parent="." instance=ExtResource("3_g5x5g")]
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_status") instance=ExtResource("3_g5x5g")]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("4_xuo3q")
+health_status = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_5fcxh")
@@ -88,7 +88,11 @@ show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[node name="HealthComponent" parent="." instance=ExtResource("4_3gey4")]
+max_health = 10
+
+[connection signal="damaged" from="Hurtbox" to="." method="_on_hurtbox_damaged"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 
 [editable path="Hurtbox"]

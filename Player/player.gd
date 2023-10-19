@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player_melee = $PlayerMelee
 @onready var player_ranged = $PlayerRanged
-@onready var current = $PlayerMelee
+@onready var current
 @export var day_time_flag = true
 
 # Called when the node enters the scene tree for the first time.

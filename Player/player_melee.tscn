@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://chhckptp4bd1i"]
+[gd_scene load_steps=16 format=3 uid="uid://chhckptp4bd1i"]
 
 [ext_resource type="Script" path="res://Player/player_melee.gd" id="1_ey2o4"]
 [ext_resource type="PackedScene" uid="uid://wklk1b6afk2e" path="res://HitboxHurtbox/hitbox.tscn" id="1_f1uky"]
+[ext_resource type="PackedScene" uid="uid://bsbt48ke8dhhp" path="res://Components/attack_stats.tscn" id="3_k7oam"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfh3i"]
 animation = &"attack"
@@ -101,14 +102,18 @@ libraries = {
 "": SubResource("AnimationLibrary_id8gq")
 }
 
-[node name="Hitbox" parent="." instance=ExtResource("1_f1uky")]
+[node name="Hitbox" parent="." node_paths=PackedStringArray("attack_object") instance=ExtResource("1_f1uky")]
 collision_layer = 2
 collision_mask = 4
+attack_object = NodePath("../AttackStats")
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CircleShape2D_epg8m")
 disabled = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AttackStats" parent="." instance=ExtResource("3_k7oam")]
+damage = 3
 
 [editable path="Hitbox"]
