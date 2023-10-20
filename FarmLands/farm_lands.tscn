@@ -19,6 +19,7 @@ script = ExtResource("3_ha8fk")
 [node name="UI" parent="." instance=ExtResource("3_okmyn")]
 
 [node name="WeaponChoice" parent="UI" instance=ExtResource("4_t0e6c")]
+process_mode = 3
 visible = false
 offset_left = 403.0
 offset_top = 133.0

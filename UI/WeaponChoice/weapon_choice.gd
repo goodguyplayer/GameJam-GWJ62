@@ -7,13 +7,16 @@ func _ready():
 
 func choose_weapon():
 	visible = true
+	get_tree().paused = true
 
 
 func _on_melee_choice_pressed():
 	GlobalSignals.weapon_choice.emit(0)
 	visible = false
+	get_tree().paused = false
 
 
 func _on_ranged_choice_pressed():
 	GlobalSignals.weapon_choice.emit(1)
 	visible = false
+	get_tree().paused = false
