@@ -26,7 +26,7 @@ func _on_night_time():
 
 
 func _update_scoreboard(score_points):
-	score_number.text = str(score_points)
+	score_number.text = str(score_points + int(score_number.text))
 	
 
 func _update_money(money_point):
