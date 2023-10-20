@@ -3,14 +3,25 @@ extends CanvasLayer
 @onready var money_number = $MarginContainer/Header/HBoxContainer/Money/VBoxContainer/MoneyNumber
 @onready var days_number = $MarginContainer/Header/HBoxContainer/Days/VBoxContainer/DaysNumber
 @onready var score_number = $MarginContainer/Header/HBoxContainer/Score/VBoxContainer/ScoreNumber
+@onready var log_button = $MarginContainer/MarginContainer/HBoxContainer/LogButton
+@onready var end_day = $MarginContainer/MarginContainer/HBoxContainer/EndDay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalSignals.day_time.connect(_on_new_day)
+	GlobalSignals.night_time.connect(_on_night_time)
 
 
 func _on_new_day():
 	days_number.text = str(DayStats.days_passed)
+	log_button.visible = true
+	end_day.visible = true
+
+
+func _on_night_time():
+	log_button.visible = false
+	end_day.visible = false
+
 
 
 func _on_log_button_pressed():
