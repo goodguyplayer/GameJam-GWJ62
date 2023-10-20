@@ -10,5 +10,4 @@ func _ready():
 
 
 func _theme_font_change(theme_font):
-	print(theme_font)
 	theme.set_font("BBesque", "", theme_font)

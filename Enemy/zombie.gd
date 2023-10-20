@@ -23,17 +23,9 @@ func _ready():
 func _physics_process(delta):
 	move_and_slide()
 
-
-func _on_timer_timeout():
-	hurtbox.set_deferred("monitoring", true)
 	
-
 func _on_die_animation_finished():
 	queue_free()
-
-
-func _on_hurtbox_damaged():
-	print(health_component.current_health)
 
 
 func _on_health_component_died():

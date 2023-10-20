@@ -22,6 +22,4 @@ func _on_close_pressed():
 
 func _on_item_list_item_selected(index):
 	item_selected.emit(plant_types[index])
-	print(plant_types[index])
-	print(index)
 	visible = false

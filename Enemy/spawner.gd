@@ -37,8 +37,6 @@ func _process(delta):
 		for i in range(enemies_qty):
 			var enemy = to_spawn.instantiate()
 			array_markers.shuffle()
-			#var chosen_marker = rng.randi_range(0, 5)
-			print(array_markers[0])
 			enemy.position = array_markers[0].global_position
 			get_tree().get_current_scene().add_child(enemy)
 		timer_allows = false

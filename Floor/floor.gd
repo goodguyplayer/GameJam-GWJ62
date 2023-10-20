@@ -20,11 +20,9 @@ func _update_seeds_new_day():
 		if internal_timer == plant_used.plant_max_age:
 			internal_timer = 0
 			plant_used = preload(DEFAULT_PLANT)
-			print("Your plant has died! Oh yes!")
 			pass # Kill plant
 		else:
 			internal_timer += 1
-			print("{name}:{days} days have passed for this plant!".format({"days": internal_timer, "name": name})) 
 
 
 func _on_area_2d_input_event(_viewport, event, _shape_idx):

@@ -24,9 +24,7 @@ func _change_day():
 	if current_time == DayType.DAY:
 		days_passed += 1
 		current_time = DayType.NIGHT
-		print("Night time! Night {night}".format({"night":night_passed}))
 	else:
 		night_passed += 1
 		current_time = DayType.DAY
-		print("Day time! Day {day}".format({"day":days_passed}))
 		GlobalSignals.day_changed.emit()
