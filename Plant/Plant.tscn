@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd86lvwlkesd8"]
+[gd_scene load_steps=4 format=3 uid="uid://dd86lvwlkesd8"]
 
 [ext_resource type="Script" path="res://Plant/Plant.gd" id="1_4m0xg"]
+[ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="2_wc0x7"]
+[ext_resource type="PackedScene" uid="uid://bwatv7jq0qe7r" path="res://Components/age_component.tscn" id="3_dpn35"]
 
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_4m0xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_wc0x7")]
+
+[node name="Age" parent="." instance=ExtResource("3_dpn35")]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="reached_max_age" from="Age" to="." method="_on_age_reached_max_age"]

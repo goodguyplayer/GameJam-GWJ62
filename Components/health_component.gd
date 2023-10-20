@@ -39,3 +39,8 @@ func damage(damage_val):
 
 func heal(healing_val):
 	current_health = clamp(healing_val + current_health, 1, max_health)
+
+
+func update_all(new_health):
+	max_health = new_health
+	initialize()
