@@ -91,8 +91,6 @@ show_percentage = false
 [node name="HealthComponent" parent="." instance=ExtResource("4_3gey4")]
 max_health = 10
 
-[connection signal="damaged" from="Hurtbox" to="." method="_on_hurtbox_damaged"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 
 [editable path="Hurtbox"]
