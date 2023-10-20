@@ -38,63 +38,63 @@ position = Vector2(576, 320)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor2" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(704, 384)
+position = Vector2(451, 254)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor3" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(448, 384)
+position = Vector2(704, 253)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor4" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(576, 448)
+position = Vector2(579, 187)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor5" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(328, 192)
+position = Vector2(324, 187)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor6" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(456, 256)
+position = Vector2(199, 121)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor7" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(200, 256)
+position = Vector2(452, 120)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor8" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(328, 320)
+position = Vector2(327, 54)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor9" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(832, 184)
+position = Vector2(832, 187)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor10" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(960, 248)
+position = Vector2(707, 121)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor11" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(704, 248)
+position = Vector2(960, 120)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor12" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(832, 312)
+position = Vector2(835, 54)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor13" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(576, 56)
+position = Vector2(580, 54)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor14" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(704, 120)
+position = Vector2(455, -12)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor15" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(448, 120)
+position = Vector2(708, -13)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Floor16" parent="CanvasGroup" instance=ExtResource("1_k4rfe")]
-position = Vector2(576, 184)
+position = Vector2(583, -79)
 scale = Vector2(0.652158, 0.593549)
 
 [node name="Player" parent="." instance=ExtResource("6_4qqqm")]
