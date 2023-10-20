@@ -10,6 +10,8 @@ extends CanvasLayer
 func _ready():
 	GlobalSignals.day_time.connect(_on_new_day)
 	GlobalSignals.night_time.connect(_on_night_time)
+	GlobalSignals.score_update.connect(_update_scoreboard)
+	GlobalSignals.money_update.connect(_update_money)
 
 
 func _on_new_day():
@@ -22,6 +24,13 @@ func _on_night_time():
 	log_button.visible = false
 	end_day.visible = false
 
+
+func _update_scoreboard(score_points):
+	score_number.text = str(score_points)
+	
+
+func _update_money(money_point):
+	money_number.text = str(money_point)
 
 
 func _on_log_button_pressed():

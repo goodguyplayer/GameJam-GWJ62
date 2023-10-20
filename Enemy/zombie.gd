@@ -13,6 +13,7 @@ const TIMER_FLICKER : float = 1.2
 @onready var animation_player = $AnimationPlayer
 @onready var health_component = $HealthComponent
 
+var rng = RandomNumberGenerator.new()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -29,6 +30,9 @@ func _on_die_animation_finished():
 
 
 func _on_health_component_died():
+	var death_score = rng.randi_range(160,1600)
+	GlobalSignals.score_update.emit(death_score)
+	GlobalSignals.money_update.emit(death_score)
 	animation_player.play("die")
 
 
