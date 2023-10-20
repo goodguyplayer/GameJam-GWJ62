@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqy1wshi5ueic"]
+[gd_scene load_steps=10 format=3 uid="uid://bqy1wshi5ueic"]
 
 [ext_resource type="Script" path="res://Floor/floor.gd" id="1_71mhv"]
 [ext_resource type="Resource" uid="uid://ydwmsuaanpvq" path="res://Plant/Resources/no_plant.tres" id="2_jg3hg"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" path="res://Floor/PlantSeed.gd" id="4_jnsu8"]
 [ext_resource type="Script" path="res://Floor/PlantStatus.gd" id="5_qbl48"]
 [ext_resource type="PackedScene" uid="uid://dd86lvwlkesd8" path="res://Plant/Plant.tscn" id="6_yotm0"]
+[ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="7_u5tlt"]
+[ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="8_85ruw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njokk"]
+radius = 96.3328
 
 [node name="Floor" type="Node2D"]
 script = ExtResource("1_71mhv")
@@ -133,8 +138,22 @@ text = "Close"
 [node name="Plant" parent="." instance=ExtResource("6_yotm0")]
 position = Vector2(0, -112)
 
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_status") instance=ExtResource("7_u5tlt")]
+collision_layer = 16
+collision_mask = 8
+health_status = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -112)
+shape = SubResource("CircleShape2D_njokk")
+
+[node name="HealthComponent" parent="." instance=ExtResource("8_85ruw")]
+max_health = 100
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="item_selected" from="PlantSeed" to="." method="_on_plant_seed_item_selected"]
 [connection signal="item_selected" from="PlantSeed/ItemList" to="PlantSeed" method="_on_item_list_item_selected"]
 [connection signal="pressed" from="PlantSeed/Close" to="PlantSeed" method="_on_close_pressed"]
 [connection signal="pressed" from="PlantStatus/Close" to="PlantStatus" method="_on_close_pressed"]
+
+[editable path="Hurtbox"]
