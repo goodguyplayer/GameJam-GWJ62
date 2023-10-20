@@ -6,7 +6,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalSignals.day_changed.connect(_on_new_day)
+	GlobalSignals.day_time.connect(_on_new_day)
 
 
 func _on_new_day():
