@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqy1wshi5ueic"]
+[gd_scene load_steps=9 format=3 uid="uid://bqy1wshi5ueic"]
 
 [ext_resource type="Script" path="res://Floor/floor.gd" id="1_71mhv"]
-[ext_resource type="Resource" uid="uid://ydwmsuaanpvq" path="res://Plant/Resources/no_plant.tres" id="2_jg3hg"]
 [ext_resource type="Texture2D" uid="uid://ciuvr63nv16fw" path="res://Floor/floor_sprite_2.png" id="3_1hb0l"]
 [ext_resource type="Script" path="res://Floor/PlantSeed.gd" id="4_jnsu8"]
 [ext_resource type="Script" path="res://Floor/PlantStatus.gd" id="5_qbl48"]
@@ -14,7 +13,6 @@ radius = 96.3328
 
 [node name="Floor" type="Node2D"]
 script = ExtResource("1_71mhv")
-plant_used = ExtResource("2_jg3hg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_1hb0l")

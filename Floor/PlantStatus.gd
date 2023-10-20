@@ -12,7 +12,7 @@ func _ready():
 
 
 
-func update_status(plant, age :int):
+func update_status(plant):
 	name_seed.text = plant.current_type.plant_name
 	age_plant.text = "Age.: {age}".format({"age": str(plant.age.current_age)})
 	seed_type.text = "Seed.: {seed}".format({"seed":plant.current_type.plant_type})

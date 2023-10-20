@@ -13,12 +13,12 @@ func _ready():
 
 
 func initialize():
-	current_age = max_age
+	current_age = 0
 	
 
 func new_settings(new_max):
 	max_age = new_max
-	current_age = max_age
+	current_age = 0
 
 
 func set_max_age(value):
@@ -39,7 +39,9 @@ func get_current_age():
 
 func _update_age():
 	current_age += 1 
-	if current_age == max_age:
+	print("{curr} - {max}".format({"curr": str(current_age), "max": str(max_age)}))
+	if current_age >= max_age:
+		print("Reached max age")
 		reached_max_age.emit()
 	
 	

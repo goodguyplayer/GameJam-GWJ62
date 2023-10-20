@@ -10,6 +10,7 @@ script = ExtResource("1_4m0xg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_wc0x7")]
+max_health = 100
 
 [node name="Age" parent="." instance=ExtResource("3_dpn35")]
 
