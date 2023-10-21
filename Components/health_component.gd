@@ -5,6 +5,7 @@ extends Node2D
 @export var current_health : int :
 	set = set_current_health, get = get_current_health
 signal died()
+signal hurt(new_health)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +36,8 @@ func damage(damage_val):
 	current_health -= damage_val
 	if current_health <= 0:
 		emit_signal("died")
+	else:
+		emit_signal("hurt", current_health)
 
 
 func heal(healing_val):
