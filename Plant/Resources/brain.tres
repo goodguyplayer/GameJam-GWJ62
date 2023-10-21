@@ -9,3 +9,4 @@ seed_used = "None"
 plant_type = "None"
 plant_max_age = 3
 plant_max_health = 40
+plant_score = 100

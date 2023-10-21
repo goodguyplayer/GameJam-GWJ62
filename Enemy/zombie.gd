@@ -30,11 +30,13 @@ func _on_die_animation_finished():
 
 
 func _on_health_component_died():
-	var death_score = rng.randi_range(160,1600)
-	GlobalSignals.score_update.emit(death_score)
-	GlobalSignals.money_update.emit(death_score)
 	animation_player.play("die")
 
 
 func _end_it_all():
 	queue_free()
+
+
+func _on_health_component_hurt(new_health):
+	progress_bar.visible = true
+	progress_bar.value = new_health

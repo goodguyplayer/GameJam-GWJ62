@@ -92,5 +92,6 @@ show_percentage = false
 max_health = 10
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurt" from="HealthComponent" to="." method="_on_health_component_hurt"]
 
 [editable path="Hurtbox"]

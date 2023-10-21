@@ -9,3 +9,4 @@ seed_used = "Organ"
 plant_type = "Organ"
 plant_max_age = 7
 plant_max_health = 145
+plant_score = 450

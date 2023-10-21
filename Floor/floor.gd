@@ -31,6 +31,8 @@ func _on_plant_seed_item_selected(plant_type):
 
 func _disable_clickbox_nighttime():
 	click_area.visible = false
+	plant_seed.visible = false
+	plant_status.visible = false
 	
 
 func _enable_clickbox_nighttime():

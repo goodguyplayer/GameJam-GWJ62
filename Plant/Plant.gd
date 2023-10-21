@@ -9,7 +9,7 @@ var is_alive = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	current_type = DEFAULT_PLANT
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +27,10 @@ func change_type(new_type):
 
 func _on_age_reached_max_age():
 	is_alive = false
-	current_type = DEFAULT_PLANT
+	if current_type.plant_name != "None":
+		GlobalSignals.score_update.emit(current_type.plant_score)
+		current_type = DEFAULT_PLANT
+	
 
 
 func _on_health_component_died():

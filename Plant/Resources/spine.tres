@@ -9,3 +9,4 @@ seed_used = "Bones"
 plant_type = "Bones"
 plant_max_age = 7
 plant_max_health = 100
+plant_score = 600
