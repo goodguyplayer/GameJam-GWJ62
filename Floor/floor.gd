@@ -21,6 +21,7 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 				plant_status.update_status(plant)
 				plant_status.visible = true
 			else:
+				plant_seed.get_data()
 				plant_seed.visible = true
 
 
