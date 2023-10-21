@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var timer = $Timer
+@onready var ui = $UI
+
 @export var timer_night = [
 	1,
 	2,
@@ -14,6 +16,8 @@ func _ready():
 
 func _night_time_warzone():
 	timer.start(timer_night[1]*100)
+	ui.update_timer(timer_night[1]*100)
+	
 
 
 func _on_timer_timeout():
