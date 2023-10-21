@@ -15,8 +15,8 @@ func _ready():
 
 
 func _night_time_warzone():
-	timer.start(timer_night[1]*100)
-	ui.update_timer(timer_night[1]*100)
+	timer.start(20)
+	ui.update_timer(20)
 	
 
 
