@@ -30,6 +30,8 @@ func _on_die_animation_finished():
 
 
 func _on_health_component_died():
+	var new_item = rng.randi_range(0, 4)
+	GeneralStats.add_to_inventory(new_item, 1)
 	animation_player.play("die")
 
 

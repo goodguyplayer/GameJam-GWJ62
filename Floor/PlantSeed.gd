@@ -31,4 +31,5 @@ func _on_close_pressed():
 func _on_item_list_item_selected(index):
 	if GeneralStats.is_item_available(index):
 		item_selected.emit(plant_types[index])
+		GeneralStats.substract_from_inventory(index)
 		visible = false
