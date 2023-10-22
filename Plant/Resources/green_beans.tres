@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://dlhhq8di7eyy7"]
+
+[ext_resource type="Texture2D" uid="uid://e3b6woiq5led" path="res://Plant/Images/carrot_01.png" id="1_5iwpk"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_wxcfn"]
+
+[resource]
+script = ExtResource("2_wxcfn")
+plant_name = "Carrot"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 5
+plant_max_health = 47
+plant_score = 150
+image = ExtResource("1_5iwpk")

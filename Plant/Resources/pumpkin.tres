@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://ddhw0erlmk7ii"]
+
+[ext_resource type="Texture2D" uid="uid://cpa2fumrjvu2c" path="res://Plant/Images/peas_01.png" id="1_1er02"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_fhpdu"]
+
+[resource]
+script = ExtResource("2_fhpdu")
+plant_name = "Pepper"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 5
+plant_max_health = 70
+plant_score = 200
+image = ExtResource("1_1er02")

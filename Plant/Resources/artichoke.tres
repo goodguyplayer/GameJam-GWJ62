@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://3titr0m5wp4n"]
+
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="1_04yoj"]
+[ext_resource type="Texture2D" uid="uid://dut6vsn54qjar" path="res://Plant/Images/artichoke_01.png" id="1_voa0y"]
+
+[resource]
+script = ExtResource("1_04yoj")
+plant_name = "Artichoke"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 3
+plant_max_health = 48
+plant_score = 100
+image = ExtResource("1_voa0y")

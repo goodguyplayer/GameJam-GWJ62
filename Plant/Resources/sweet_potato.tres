@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://bmks2u7vrv2po"]
+
+[ext_resource type="Texture2D" uid="uid://w7200jq02nk5" path="res://Plant/Images/Pumpkin_01.png" id="1_kcer8"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_5283k"]
+
+[resource]
+script = ExtResource("2_5283k")
+plant_name = "Pumpkin"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 7
+plant_max_health = 300
+plant_score = 500
+image = ExtResource("1_kcer8")

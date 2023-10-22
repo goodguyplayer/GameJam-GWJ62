@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://dqcjpm5lm7fpr"]
+
+[ext_resource type="Texture2D" uid="uid://dmk6o4501ecvd" path="res://Plant/Images/onion_01.png" id="1_l4vl0"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_4o408"]
+
+[resource]
+script = ExtResource("2_4o408")
+plant_name = "Onion"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 3
+plant_max_health = 30
+plant_score = 150
+image = ExtResource("1_l4vl0")

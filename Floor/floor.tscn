@@ -1,12 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqy1wshi5ueic"]
+[gd_scene load_steps=21 format=3 uid="uid://bqy1wshi5ueic"]
 
 [ext_resource type="Script" path="res://Floor/floor.gd" id="1_71mhv"]
 [ext_resource type="Texture2D" uid="uid://ciuvr63nv16fw" path="res://Floor/floor_sprite_2.png" id="3_1hb0l"]
+[ext_resource type="Texture2D" uid="uid://dut6vsn54qjar" path="res://Plant/Images/artichoke_01.png" id="4_3e8b2"]
 [ext_resource type="Script" path="res://Floor/PlantSeed.gd" id="4_jnsu8"]
+[ext_resource type="Texture2D" uid="uid://bjfn0ym3prwym" path="res://Plant/Images/broccoli_01.png" id="5_l76uf"]
 [ext_resource type="Script" path="res://Floor/PlantStatus.gd" id="5_qbl48"]
+[ext_resource type="Texture2D" uid="uid://e3b6woiq5led" path="res://Plant/Images/carrot_01.png" id="6_xg888"]
 [ext_resource type="PackedScene" uid="uid://dd86lvwlkesd8" path="res://Plant/Plant.tscn" id="6_yotm0"]
+[ext_resource type="Texture2D" uid="uid://dbmwn28qaw1jp" path="res://Plant/Images/green beans_01.png" id="7_h5jrs"]
 [ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="7_u5tlt"]
+[ext_resource type="Texture2D" uid="uid://bk1psa1uhkd0n" path="res://Plant/Images/kale_01.png" id="8_1u4vn"]
 [ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="8_85ruw"]
+[ext_resource type="Texture2D" uid="uid://6d11ojdwmoca" path="res://Plant/Images/lettuce_01.png" id="9_mx7lq"]
+[ext_resource type="Texture2D" uid="uid://dmk6o4501ecvd" path="res://Plant/Images/onion_01.png" id="10_xdp6p"]
+[ext_resource type="Texture2D" uid="uid://cpa2fumrjvu2c" path="res://Plant/Images/peas_01.png" id="11_mxqyr"]
+[ext_resource type="Texture2D" uid="uid://cq7ajlm0t2lqt" path="res://Plant/Images/pepper_01.png" id="12_68i3m"]
+[ext_resource type="Texture2D" uid="uid://w7200jq02nk5" path="res://Plant/Images/Pumpkin_01.png" id="13_btfd3"]
+[ext_resource type="Texture2D" uid="uid://cnb2hhi8gdejg" path="res://Plant/Images/sweet potato_01.png" id="14_gxpt5"]
+[ext_resource type="Texture2D" uid="uid://brkth6utxl1ti" path="res://Plant/Images/tomato_01.png" id="15_ilsmq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_njokk"]
 radius = 96.3328
@@ -53,12 +65,31 @@ offset_left = -128.0
 offset_top = -640.0
 offset_right = 128.0
 offset_bottom = -320.0
-item_count = 5
-item_0/text = "Brain"
-item_1/text = "Eyes"
-item_2/text = "Heart"
-item_3/text = "Skull"
-item_4/text = "Spine"
+item_count = 12
+item_0/text = "Artichoke"
+item_0/icon = ExtResource("4_3e8b2")
+item_1/text = "Broccoli"
+item_1/icon = ExtResource("5_l76uf")
+item_2/text = "Carrot"
+item_2/icon = ExtResource("6_xg888")
+item_3/text = "Green Bean"
+item_3/icon = ExtResource("7_h5jrs")
+item_4/text = "Kale"
+item_4/icon = ExtResource("8_1u4vn")
+item_5/text = "Lettuce"
+item_5/icon = ExtResource("9_mx7lq")
+item_6/text = "Onion"
+item_6/icon = ExtResource("10_xdp6p")
+item_7/text = "Peas"
+item_7/icon = ExtResource("11_mxqyr")
+item_8/text = "Pepper"
+item_8/icon = ExtResource("12_68i3m")
+item_9/text = "Pumpkin"
+item_9/icon = ExtResource("13_btfd3")
+item_10/text = "Sweet Potato"
+item_10/icon = ExtResource("14_gxpt5")
+item_11/text = "Tomato"
+item_11/icon = ExtResource("15_ilsmq")
 
 [node name="Close" type="Button" parent="PlantSeed"]
 layout_mode = 0

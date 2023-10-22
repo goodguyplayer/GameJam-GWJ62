@@ -6,6 +6,13 @@ extends Node
 	0,
 	0,
 	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
 ] : 
 	set = set_inventory_array, get = get_inventory_array
 

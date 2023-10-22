@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://tkjjgom8k5nm"]
+
+[ext_resource type="Texture2D" uid="uid://bk1psa1uhkd0n" path="res://Plant/Images/kale_01.png" id="1_cvv85"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_4y01f"]
+
+[resource]
+script = ExtResource("2_4y01f")
+plant_name = "Kale"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 1
+plant_max_health = 10
+plant_score = 30
+image = ExtResource("1_cvv85")

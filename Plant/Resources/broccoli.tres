@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantProperties" load_steps=3 format=3 uid="uid://b3fqqdhmm3qwo"]
+
+[ext_resource type="Texture2D" uid="uid://bjfn0ym3prwym" path="res://Plant/Images/broccoli_01.png" id="1_5bk5l"]
+[ext_resource type="Script" path="res://Plant/plant_properties.gd" id="2_c63ra"]
+
+[resource]
+script = ExtResource("2_c63ra")
+plant_name = "Broccoli"
+seed_used = "Seed1"
+plant_type = "Plant"
+plant_max_age = 2
+plant_max_health = 24
+plant_score = 50
+image = ExtResource("1_5bk5l")
