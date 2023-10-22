@@ -15,8 +15,10 @@ func _ready():
 func _process(delta):
 	position = get_global_mouse_position()
 	if not day_time_flag:
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if Input.is_action_just_pressed("mouse_click"):
 			current.attack()
+		if Input.is_action_just_pressed("reload"):
+			current.reload()
 
 
 func night_time(melee_ranged):
@@ -27,6 +29,7 @@ func night_time(melee_ranged):
 	else:
 		current = player_ranged
 		player_ranged.visible = (true)
+		GlobalSignals.ammo_count_changed.emit(10)
 		
 
 func day_time():

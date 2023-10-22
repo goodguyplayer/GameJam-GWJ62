@@ -6,6 +6,7 @@ func _ready():
 
 
 func choose_weapon():
+	GlobalSignals.ammo_count_changed.emit(0)
 	visible = true
 	get_tree().paused = true
 

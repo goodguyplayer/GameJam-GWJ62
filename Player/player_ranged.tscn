@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkujqc765dwo5"]
+[gd_scene load_steps=18 format=3 uid="uid://bkujqc765dwo5"]
 
 [ext_resource type="Script" path="res://Player/player_ranged.gd" id="1_absld"]
 [ext_resource type="PackedScene" uid="uid://wklk1b6afk2e" path="res://HitboxHurtbox/hitbox.tscn" id="1_jsq7e"]
+[ext_resource type="Texture2D" uid="uid://dytyrllcnwoyt" path="res://Player/crosshairs_black.png" id="2_52wtq"]
 [ext_resource type="PackedScene" uid="uid://bsbt48ke8dhhp" path="res://Components/attack_stats.tscn" id="3_uqdf4"]
 
 [sub_resource type="Animation" id="Animation_klbp2"]
@@ -53,11 +54,30 @@ tracks/1/keys = {
 resource_name = "idle"
 length = 0.1
 
+[sub_resource type="Animation" id="Animation_pujd1"]
+resource_name = "reload"
+length = 0.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reload"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kxrto"]
 _data = {
 "RESET": SubResource("Animation_klbp2"),
 "attack": SubResource("Animation_3qqwx"),
-"idle": SubResource("Animation_3ei0d")
+"idle": SubResource("Animation_3ei0d"),
+"reload": SubResource("Animation_pujd1")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gk6ur"]
@@ -87,10 +107,18 @@ states/idle/position = Vector2(631, 139)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_xx21v"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_x2umt"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_h8lem"), "idle", "End", SubResource("AnimationNodeStateMachineTransition_pm6ul")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_co2rm"]
-radius = 16.0
+radius = 24.0
 
 [node name="PlayerRanged" type="Node2D"]
 script = ExtResource("1_absld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.5, 0.999999)
+scale = Vector2(3.9375, 3.875)
+texture = ExtResource("2_52wtq")
+hframes = 16
+vframes = 16
+frame = 79
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

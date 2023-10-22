@@ -9,8 +9,13 @@ func _ready():
 	pass # Replace with function body.
 
 
+func reload():
+	pass
+
+
 func attack():
 	animation_player.play("attack")
+	
 
 
 func attack_stop():

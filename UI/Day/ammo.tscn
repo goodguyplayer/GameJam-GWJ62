@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://coa7v7qhs60ub"]
+
+[ext_resource type="Script" path="res://UI/Day/ammo.gd" id="1_fc465"]
+[ext_resource type="Texture2D" uid="uid://ot1myoc6mqel" path="res://Player/images/bullet.png" id="2_q2dtq"]
+
+[node name="Ammo" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -736.0
+offset_bottom = -584.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fc465")
+
+[node name="AmmoDisplay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 18.0
+texture = ExtResource("2_q2dtq")
+expand_mode = 1
+stretch_mode = 1

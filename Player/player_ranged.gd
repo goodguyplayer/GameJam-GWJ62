@@ -11,15 +11,19 @@ func _ready():
 	pass # Replace with function body.
 
 
+
+
 func reload():
 	#animation_player.play("reload")
 	ammo = max_ammo
+	GlobalSignals.ammo_count_changed.emit(ammo)
 
 
 func attack():
 	if ammo != 0:	
 		animation_player.play("attack")
 		ammo = ammo - 1
+		GlobalSignals.ammo_count_changed.emit(ammo)
 		
 		
 func attack_stop():
