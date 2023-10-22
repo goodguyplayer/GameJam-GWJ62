@@ -19,6 +19,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	GlobalSignals.day_time.connect(_end_it_all)
+	animation_player.play("idle")
 
 
 func _physics_process(delta):

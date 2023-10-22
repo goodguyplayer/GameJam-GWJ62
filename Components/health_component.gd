@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 @export var max_health : int :
 	set = set_max_health, get = get_max_health
 @export var current_health : int :

@@ -5,6 +5,7 @@ extends Node2D
 @onready var plant_status = $PlantStatus
 @onready var plant = $Plant
 @onready var click_area = $Area2D
+@onready var hurtbox = $Hurtbox
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +35,10 @@ func _disable_clickbox_nighttime():
 	click_area.visible = false
 	plant_seed.visible = false
 	plant_status.visible = false
+	if plant.is_alive:
+		hurtbox.visible = true
+	else:
+		hurtbox.visible = false
 	
 
 func _enable_clickbox_nighttime():

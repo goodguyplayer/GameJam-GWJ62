@@ -1,16 +1,45 @@
-[gd_scene load_steps=13 format=3 uid="uid://brqc2sau2ydpp"]
+[gd_scene load_steps=14 format=3 uid="uid://brqc2sau2ydpp"]
 
 [ext_resource type="Script" path="res://Enemy/zombie.gd" id="1_wjffg"]
-[ext_resource type="Texture2D" uid="uid://cddr4msoaopwb" path="res://icon.svg" id="2_f5qj8"]
+[ext_resource type="Texture2D" uid="uid://df5ieyfe5iefj" path="res://Enemy/Zombie.png" id="2_s0hl4"]
 [ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="3_g5x5g"]
 [ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="4_3gey4"]
 
+[sub_resource type="Animation" id="Animation_r58x3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_khcmp"]
 resource_name = "attack"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17, 18, 19, 13]
+}
 
 [sub_resource type="Animation" id="Animation_0pbaa"]
 resource_name = "die"
-length = 0.4
+length = 0.5
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -25,15 +54,56 @@ tracks/0/keys = {
 "method": &"_on_die_animation_finished"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 41, 42, 43]
+}
 
 [sub_resource type="Animation" id="Animation_qu2yj"]
 resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
 
 [sub_resource type="Animation" id="Animation_wvfst"]
 resource_name = "walking"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29, 30, 31, 32, 33]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o8xfg"]
 _data = {
+"RESET": SubResource("Animation_r58x3"),
 "attack": SubResource("Animation_khcmp"),
 "die": SubResource("Animation_0pbaa"),
 "idle": SubResource("Animation_qu2yj"),
@@ -52,7 +122,11 @@ bg_color = Color(1, 0, 0, 1)
 script = ExtResource("1_wjffg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_f5qj8")
+position = Vector2(-9.53674e-07, -1.43051e-06)
+scale = Vector2(4.41379, 4)
+texture = ExtResource("2_s0hl4")
+hframes = 13
+vframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
