@@ -4,6 +4,7 @@ var current_type : PlantProperties
 const DEFAULT_PLANT : PlantProperties = preload("res://Plant/Resources/no_plant.tres")
 @onready var health_component = $HealthComponent
 @onready var age = $Age
+@onready var sprite_2d = $Sprite2D
 
 var is_alive = false
 
@@ -22,6 +23,7 @@ func change_type(new_type):
 	current_type = new_type
 	health_component.update_all(current_type.plant_max_health)
 	age.new_settings(current_type.plant_max_age)
+	sprite_2d.texture = current_type.image
 	
 
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://brqc2sau2ydpp"]
+[gd_scene load_steps=19 format=3 uid="uid://brqc2sau2ydpp"]
 
 [ext_resource type="Script" path="res://Enemy/zombie.gd" id="1_wjffg"]
 [ext_resource type="Texture2D" uid="uid://df5ieyfe5iefj" path="res://Enemy/Zombie.png" id="2_s0hl4"]
 [ext_resource type="PackedScene" uid="uid://eumklq20br6p" path="res://HitboxHurtbox/hurtbox.tscn" id="3_g5x5g"]
 [ext_resource type="PackedScene" uid="uid://bndo4ykdyxjg" path="res://Components/health_component.tscn" id="4_3gey4"]
+[ext_resource type="PackedScene" uid="uid://wklk1b6afk2e" path="res://HitboxHurtbox/hitbox.tscn" id="5_qriko"]
+[ext_resource type="PackedScene" uid="uid://bsbt48ke8dhhp" path="res://Components/attack_stats.tscn" id="6_h44nf"]
 
 [sub_resource type="Animation" id="Animation_r58x3"]
 length = 0.001
@@ -18,6 +20,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_khcmp"]
@@ -35,6 +49,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [13, 14, 15, 16, 17, 18, 19, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_0pbaa"]
@@ -118,6 +144,16 @@ radius = 64.4981
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugsd8"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ar2hr"]
+radius = 576.056
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u6u5n"]
+radius = 65.9697
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tt7gh"]
+radius = 32.0
+height = 112.0
+
 [node name="Zombie" type="CharacterBody2D"]
 script = ExtResource("1_wjffg")
 
@@ -165,7 +201,34 @@ show_percentage = false
 [node name="HealthComponent" parent="." instance=ExtResource("4_3gey4")]
 max_health = 10
 
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_ar2hr")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_u6u5n")
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("attack_object") instance=ExtResource("5_qriko")]
+attack_object = NodePath("../AttackStats")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(32, 0)
+shape = SubResource("CapsuleShape2D_tt7gh")
+
+[node name="AttackStats" parent="." instance=ExtResource("6_h44nf")]
+damage = 1
+
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurt" from="HealthComponent" to="." method="_on_health_component_hurt"]
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
 
 [editable path="Hurtbox"]
+[editable path="Hitbox"]

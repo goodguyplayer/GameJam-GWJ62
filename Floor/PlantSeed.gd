@@ -7,7 +7,6 @@ var plant_types = [
 	preload("res://Plant/Resources/green_beans.tres"), 
 	preload("res://Plant/Resources/kale.tres"), 
 	preload("res://Plant/Resources/lettuce.tres"), 
-	preload("res://Plant/Resources/no_plant.tres"), 
 	preload("res://Plant/Resources/onion.tres"), 
 	preload("res://Plant/Resources/peas.tres"), 
 	preload("res://Plant/Resources/pepper.tres"), 

@@ -1,19 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgp3t0qmpw5i"]
+[gd_scene load_steps=14 format=3 uid="uid://bgp3t0qmpw5i"]
 
 [ext_resource type="Script" path="res://FarmLands/farm_lands.gd" id="1_3orom"]
 [ext_resource type="PackedScene" uid="uid://bqy1wshi5ueic" path="res://Floor/floor.tscn" id="1_k4rfe"]
+[ext_resource type="Texture2D" uid="uid://ytfi8tyloogw" path="res://FarmLands/stage-preview.png" id="2_ams0n"]
 [ext_resource type="PackedScene" uid="uid://bfxfddhjdjac2" path="res://Menus/Pause/pause.tscn" id="3_evsle"]
 [ext_resource type="Script" path="res://FarmLands/Camera2D.gd" id="3_ha8fk"]
 [ext_resource type="PackedScene" uid="uid://dug3q248gh305" path="res://UI/Day/header.tscn" id="3_okmyn"]
 [ext_resource type="PackedScene" uid="uid://ced0xog2y580v" path="res://UI/WeaponChoice/weapon_choice.tscn" id="4_t0e6c"]
 [ext_resource type="PackedScene" uid="uid://nbh3jt1glm68" path="res://Player/player.tscn" id="6_4qqqm"]
 [ext_resource type="PackedScene" uid="uid://cko4ox3ag5fku" path="res://Enemy/spawner.tscn" id="8_0gicr"]
+[ext_resource type="Texture2D" uid="uid://d2ibj3emerjh3" path="res://FarmLands/leaf.png" id="10_afr4c"]
+
+[sub_resource type="Curve" id="Curve_1trbg"]
+min_value = -500.0
+max_value = 500.0
+_data = [Vector2(0, 215.789), 0.0, 0.0, 0, 0, Vector2(0.608434, -226.316), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_eqr62"]
+curve = SubResource("Curve_1trbg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_irtlm"]
+emission_shape = 3
+emission_box_extents = Vector3(250, 250, 1)
+particle_flag_disable_z = true
+spread = 81.0
+gravity = Vector3(92, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = SubResource("CurveTexture_eqr62")
 
 [node name="FarmLands" type="Node2D"]
 script = ExtResource("1_3orom")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(600, 64)
+scale = Vector2(13.7813, 7.5)
+texture = ExtResource("2_ams0n")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
+limit_left = -900
+limit_top = -800
+limit_right = 2100
+limit_bottom = 900
+editor_draw_limits = true
 script = ExtResource("3_ha8fk")
 
 [node name="UI" parent="." instance=ExtResource("3_okmyn")]
@@ -121,6 +152,11 @@ position = Vector2(-80, 200)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(552, -192)
+process_material = SubResource("ParticleProcessMaterial_irtlm")
+texture = ExtResource("10_afr4c")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 

@@ -2,8 +2,8 @@ extends Camera2D
 
 var _target_zoom : float = 1.0
 const MIN_ZOOM : float = 0.1
-const MAX_ZOOM: float = 1.0
-const ZOOM_INCREMENT : float = 1.0
+const MAX_ZOOM: float = 0.5
+const ZOOM_INCREMENT : float = 0.1
 const ZOOM_RATE: float = 8.0
 
 func _physics_process(delta) -> void:
@@ -23,12 +23,6 @@ func _unhandled_input(event) -> void:
 		if event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
 			position -= event.relative * zoom
 	
-	if event is InputEventMouse:
-		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				zoom_in()
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-				zoom_out()
 
 				
 
