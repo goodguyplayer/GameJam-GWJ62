@@ -17,6 +17,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pp5jj")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.458824, 0.0941176, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Title" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 10
@@ -45,7 +67,7 @@ layout_mode = 2
 theme = ExtResource("2_0vxi4")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 68
-text = "HUMAN HARVEST"
+text = "VEGAN ZOMBIES"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
@@ -53,7 +75,7 @@ layout_mode = 2
 theme = ExtResource("2_0vxi4")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
-text = "Title in works"
+text = "The harvest horrors!"
 horizontal_alignment = 1
 
 [node name="Subtitle2" type="Label" parent="Title/MarginContainer/HBoxContainer2/HBoxContainer"]
@@ -131,24 +153,24 @@ alignment = 1
 layout_mode = 2
 focus_neighbor_left = NodePath("../Exit")
 focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_right = NodePath("../Endless")
-focus_neighbor_bottom = NodePath("../Endless")
+focus_neighbor_right = NodePath("../HowToPlay")
+focus_neighbor_bottom = NodePath("../HowToPlay")
 theme = ExtResource("2_0vxi4")
 text = "Start"
 
-[node name="Endless" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
+[node name="HowToPlay" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../Start")
 focus_neighbor_top = NodePath("../Start")
 focus_neighbor_right = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Options")
 theme = ExtResource("2_0vxi4")
-text = "Endless Mode"
+text = "How to Play"
 
 [node name="Options" type="Button" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Endless")
-focus_neighbor_top = NodePath("../Endless")
+focus_neighbor_left = NodePath("../HowToPlay")
+focus_neighbor_top = NodePath("../HowToPlay")
 focus_neighbor_right = NodePath("../Credits")
 focus_neighbor_bottom = NodePath("../Credits")
 theme = ExtResource("2_0vxi4")
@@ -186,7 +208,7 @@ text = "Change font theme"
 script = ExtResource("7_q28p0")
 
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Endless" to="." method="_on_endless_pressed"]
+[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/HowToPlay" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
